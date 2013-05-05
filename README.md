@@ -1,4 +1,4 @@
-SSSocket
+#SSSocket
 ========
 
 Simple Stupid Socket Interface
@@ -7,7 +7,7 @@ This is yet another socket interface, which may be useful for client network pro
 
 ========
 
-pro :
+##pro :
 
 1.easily use both in single or multithreading by non blocking io.
 
@@ -15,14 +15,15 @@ pro :
 
 3.interface suit for integrate message io.
 
-con :
+##con :
 
 1.buffer mechanism is just an array, read and discard message from buffer require memory copy.
 
 ========
 
-interface :
+##interface :
 
+```C
 //create a socket , ready to connect to host define by host_name and port
 struct ssso* ssso_new(const char* host_name, int port);
 
@@ -42,3 +43,5 @@ void  ssso_discard(struct ssso* so, size_t size);
 void  ssso_write(struct ssso* so, const void* data, size_t size);
 
 enum SSSO_STATUS ssso_status(struct ssso* so);
+
+```
